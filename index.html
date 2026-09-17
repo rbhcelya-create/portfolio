@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Celya Rabhi, consultante développeuse à Montréal. Outils web sur mesure, applications et prototypes, développement assisté par IA.">
+<meta name="theme-color" content="#05060C">
+<meta property="og:title" content="Celya Rabhi, développeuse">
+<meta property="og:description" content="Votre outil. Sur mesure. En semaines.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305060C'/%3E%3Ctext x='50' y='70' font-size='62' font-family='Arial' font-weight='800' text-anchor='middle' fill='%238B5CF6'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Celya Rabhi, développeuse</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<canvas id="space" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="hud-top">
+  <a class="brand" href="#haut">Celya Rabhi<i>.</i></a>
+  <a class="pill" href="https://wa.me/14383550116?text=Bonjour%20Celya%2C%20j%27aimerais%20discuter%20d%27un%20projet." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+</header>
+<nav class="rail" id="rail" aria-label="Chapitres"></nav>
+<div class="readout" id="readout" aria-hidden="true"></div>
+<div class="hint" id="hint" aria-hidden="true">Défilez</div>
+
+<main class="chapters" id="haut">
+
+  <section class="ch hero c" data-name="Départ">
+    <div class="in"><div class="box">
+      <p class="k">Consultante développeuse · Montréal</p>
+      <h1><span>Votre outil.</span><span class="grad">Sur mesure.</span><span>En semaines.</span></h1>
+      <p class="lede">Je conçois et construis <strong>l'outil web qui colle à votre façon de travailler</strong>. Développement assisté par IA : un prototype entre vos mains en quelques jours.</p>
+      <div class="cta">
+        <a class="btn" data-hot href="https://wa.me/14383550116?text=Bonjour%20Celya%2C%20j%27aimerais%20discuter%20d%27un%20projet." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Écrivez-moi sur WhatsApp</a>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="ch r" data-name="À propos">
+    <div class="in"><div class="box">
+      <p class="k">À propos</p>
+      <h2>La personne qui vous <span class="grad">écoute</span> est celle qui <span class="grad">code.</span></h2>
+      <p>Je m'appelle Celya Rabhi. Je m'occupe d'un mandat d'un bout à l'autre : je rencontre le client, je cadre le besoin, je dessine l'interface, je construis et je livre. Rien ne se perd en route.</p>
+      <ul class="stack">
+        <li style="--c:var(--cyan)">HTML · CSS · JavaScript</li><li style="--c:var(--violet)">Supabase · Auth · RLS</li><li style="--c:var(--magenta)">GitHub · Netlify</li><li style="--c:var(--amber)">React Native · Expo</li><li style="--c:var(--cyan)">Claude Code</li><li style="--c:var(--violet)">Design d'interface</li><li style="--c:var(--magenta)">Tests utilisateurs</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="ch proj" data-name="Projet 01" style="--tint:var(--cyan)">
+    <div class="in"><div class="box">
+      <p class="k">Projet 01 · Agence de voyage internationale</p>
+      <h2>Outil de cotation pour voyages de groupe</h2>
+      <p>Un studio de cotation qui remplace les soumissions montées à la main : tarifs fournisseurs centralisés, devis générés pour les trois marques de l'agence.</p>
+      <ul class="did"><li>Prototype alimenté par les vraies données fournisseurs</li><li>Architecture prête pour l'API, en vue d'une connexion à l'ERP et au CRM</li></ul>
+      <ul class="tags"><li>HTML/JS</li><li>Architecture de données</li><li>GitHub</li><li>Claude Code</li></ul>
+    </div></div>
+  </section>
+
+  <section class="ch proj r" data-name="Projet 02" style="--tint:var(--amber)">
+    <div class="in"><div class="box">
+      <p class="k">Projet 02 · Contenu éducatif jeunesse</p>
+      <h2>Outil de gestion de production</h2>
+      <p>Un outil complet pour suivre la production de contenus pour enfants, livré et déployé, avec une interface à barre latérale dans l'esprit de Notion et Linear.</p>
+      <ul class="did"><li>Module Documents avec un flux de nomenclature en 5 étapes</li><li>Mise en ligne sur Netlify, base de données Supabase</li></ul>
+      <ul class="tags"><li>HTML/JS</li><li>Supabase</li><li>Netlify</li><li>Design d'interface</li></ul>
+    </div></div>
+  </section>
+
+  <section class="ch proj" data-name="Projet 03" style="--tint:var(--violet)">
+    <div class="in"><div class="box">
+      <p class="k">Projet 03 · Production · deux entités liées</p>
+      <h2>Plateforme interne de gestion de projets</h2>
+      <p>Projets, tâches, documents et coordination d'équipe réunis dans un seul outil partagé entre deux entreprises.</p>
+      <ul class="did"><li>Kanban à cinq colonnes, Gantt avec jalons indépendants des tâches</li><li>Documents Google Drive et Proton Drive, deux niveaux de visibilité</li></ul>
+      <ul class="tags"><li>HTML/JS</li><li>Supabase Auth · RLS</li><li>Netlify</li><li>Tests utilisateurs</li></ul>
+    </div></div>
+  </section>
+
+  <section class="ch proj r" data-name="Projet 04" style="--tint:var(--magenta)">
+    <div class="in"><div class="box">
+      <p class="k">Projet 04 · Événement sportif international</p>
+      <h2>Application web pour un grand événement cycliste</h2>
+      <p>Évolution d'une application web existante pour un événement d'envergure : nouvelles fonctionnalités, arbitrages de spécifications et suivi régulier avec la responsable du projet.</p>
+      <ul class="did"><li>Reprise d'une base de code existante</li><li>Décisions produit prises avec la cliente, avancement communiqué en continu</li></ul>
+      <ul class="tags"><li>Application web</li><li>GitHub</li><li>Suivi client</li></ul>
+    </div></div>
+  </section>
+
+  <section class="ch proj" data-name="Projet 05" style="--tint:var(--cyan)">
+    <div class="in"><div class="box">
+      <p class="k">Projet 05 · Aide à domicile · mobile</p>
+      <h2>Plateforme de mise en relation AVS et familles</h2>
+      <p>Une application mobile à deux volets : les familles y trouvent une auxiliaire de vie sociale, les AVS y trouvent des familles à accompagner.</p>
+      <ul class="did"><li>Place de marché à deux types d'utilisateurs</li><li>Préparation de la publication sur l'App Store et Google Play</li></ul>
+      <ul class="tags"><li>React Native</li><li>Expo</li><li>iOS · Android</li></ul>
+    </div></div>
+  </section>
+
+  <section class="ch c" data-name="Services">
+    <div class="in"><div class="box">
+      <p class="k">Services</p>
+      <h2>Ce que je <span class="grad">construis</span></h2>
+      <div class="rows">
+        <div><h3>Outils de gestion sur mesure</h3><p>Suivi de projets, de production, de documents, cotation : un outil bâti autour de vos processus, pas l'inverse.</p></div>
+        <div><h3>Applications et sites web</h3><p>Rapides, soignés, faciles à faire évoluer, déployés et hébergés simplement.</p></div>
+        <div><h3>Prototypes pour décider</h3><p>Un prototype fonctionnel avec vos vraies données, pour valider l'idée avant d'investir davantage.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="ch c" data-name="Méthode">
+    <div class="in"><div class="box">
+      <p class="k">Méthode</p>
+      <h2>De l'irritant à l'outil, en <span class="grad">cinq temps</span></h2>
+      <ol class="steps">
+        <li style="--c:var(--cyan)"><h3>Écoute</h3><p>Vos irritants, vos processus, vos vrais besoins.</p></li>
+        <li style="--c:var(--violet)"><h3>Prototype</h3><p>En quelques jours, fonctionnel, avec vos données.</p></li>
+        <li style="--c:var(--magenta)"><h3>Construction</h3><p>L'outil complet, avec des points d'étape réguliers.</p></li>
+        <li style="--c:var(--amber)"><h3>Livraison</h3><p>Mise en ligne, formation, ajustements.</p></li>
+        <li style="--c:var(--cyan)"><h3>Suivi</h3><p>Documentation claire et accompagnement.</p></li>
+      </ol>
+    </div></div>
+  </section>
+
+  <section class="ch c" data-name="Contact">
+    <div class="in"><div class="box">
+      <p class="k">Contact</p>
+      <h2>Un projet en tête? <span class="grad">Parlons-en.</span></h2>
+      <p class="lede">Le plus simple est de m'écrire sur WhatsApp. Racontez-moi ce qui vous ralentit; je vous dis ce qu'on peut construire.</p>
+      <div class="cta"><a class="btn" data-hot href="https://wa.me/14383550116?text=Bonjour%20Celya%2C%20j%27aimerais%20discuter%20d%27un%20projet." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Démarrer la conversation</a></div>
+      <a class="num" data-hot href="https://wa.me/14383550116" target="_blank" rel="noopener">+1 438 355 0116</a>
+      <p class="foot">© 2026 Celya Rabhi · Montréal, Québec</p>
+    </div></div>
+  </section>
+</main>
+
+<div class="track" id="track" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="wa" d="M12.04 2a9.9 9.9 0 0 0-8.43 15.1L2 22l5.05-1.57A9.93 9.93 0 1 0 12.04 2Zm0 1.8a8.12 8.12 0 1 1-4.3 15l-.31-.19-2.9.9.93-2.82-.2-.32A8.12 8.12 0 0 1 12.04 3.8Zm-3.2 3.9c-.2 0-.5.07-.77.36-.26.3-1 1-1 2.4 0 1.42 1.03 2.79 1.18 2.98.14.2 2 3.2 4.95 4.36 2.45.97 2.95.78 3.48.73.53-.05 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34-.3-.14-1.72-.85-1.99-.95-.26-.1-.46-.14-.65.15-.2.3-.75.95-.92 1.14-.17.2-.34.22-.63.08-.3-.15-1.23-.46-2.34-1.45a8.8 8.8 0 0 1-1.62-2.02c-.17-.3-.02-.45.13-.6.13-.13.3-.34.43-.5.15-.18.2-.3.3-.5.1-.19.05-.36-.03-.5-.07-.15-.64-1.58-.9-2.16-.22-.52-.46-.53-.66-.54l-.56-.01Z"/></defs></svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
-# Portfolio — Celya Rabhi
+# Celyra — site vitrine
 
-Site vitrine d'une page : consultante développeuse à Montréal.
+Page unique pour Celyra, le studio de Celya Rabhi, consultante développeuse à Montréal.
 
 Page statique, sans build. Le parcours est une scène WebGL (three.js r128, via CDN) qui se
 déroule au défilement ; sans WebGL ou avec `prefers-reduced-motion`, la page se replie

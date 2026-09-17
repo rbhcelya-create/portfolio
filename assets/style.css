@@ -22,7 +22,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 
 /* HUD */
 .hud-top{position:fixed;z-index:10;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gut) 14px}
-.brand{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;text-decoration:none}
+.brand{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+.brand img{width:30px;height:30px;filter:drop-shadow(0 0 14px rgba(139,92,246,.5))}
 .brand i{font-style:normal;color:var(--magenta)}
 .pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14.5px;padding:9px 16px;border-radius:999px;background:#FFFFFF;color:#05060C}
 .pill svg{width:17px;height:17px;fill:#128C4A}

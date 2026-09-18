@@ -5,6 +5,7 @@ img{max-width:100%}
   --ground:#05060C; --ink:#F4F5FF; --muted:#A3A9C7; --line:rgba(160,170,255,.22);
   --blue:#3B74FF; --cyan:#22D3FF; --magenta:#EC4FD0; --violet:#8B5CF6; --amber:#FF8A4C; --wa:#25D366; --wa-ink:#031A0B;
   --display:"Sora","Avenir Next",system-ui,sans-serif;
+  --brand:"Outfit","Avenir Next",system-ui,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   --gut:clamp(16px,4vw,48px);
@@ -22,8 +23,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 
 /* HUD */
 .hud-top{position:fixed;z-index:10;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gut) 14px}
-.brand{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
-.brand img{width:30px;height:30px;filter:drop-shadow(0 0 14px rgba(139,92,246,.5))}
+.brand{font-family:var(--brand);font-weight:600;font-size:19px;letter-spacing:-.02em;text-decoration:none;display:inline-flex;align-items:center}
+.brand img{width:30px;height:30px;margin-right:9px;filter:drop-shadow(0 0 14px rgba(139,92,246,.5))}
 .brand i{font-style:normal;color:var(--magenta)}
 .pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14.5px;padding:9px 16px;border-radius:999px;background:#FFFFFF;color:#05060C}
 .pill svg{width:17px;height:17px;fill:#128C4A}

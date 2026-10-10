@@ -1,6 +1,6 @@
-# Celyra — site vitrine
+# Spirit Agency — site vitrine
 
-Page unique pour Celyra, le studio de Celya Rabhi, consultante développeuse à Montréal.
+Page unique pour Spirit Agency, le studio de Celya Rabhi, consultante développeuse à Montréal.
 
 Page statique, sans build. Le parcours est une scène WebGL (three.js r128, via CDN) qui se
 déroule au défilement ; sans WebGL ou avec `prefers-reduced-motion`, la page se replie

@@ -7,14 +7,13 @@
     </linearGradient>
   </defs>
   <rect width="100" height="100" rx="23" fill="#05060C"/>
-  <g transform="translate(50 50) scale(.84) translate(-50 -50)">
-    <g transform="translate(17 1) scale(.62)">
-      <path fill="url(#sa-fav)" d="M8 54c-1-6 4-10 10-13 11-6 21-10 27-17l4-19 8 16 4-1 8-14 4 21c8 11 15 30 18 51l3 18H49c0-16-4-28-14-36-7-5-16-2-22 1-4 1.5-5.5-2-5-7z"/>
-      <circle cx="54" cy="34" r="3.2" fill="#05060C"/>
-    </g>
-    <g fill="none" stroke="url(#sa-fav)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(27 68)">
-      <path d="M17 6C15 2 3 1 2 8c-1 6 15 6 15 13 0 6-12 6-15 2"/>
-      <path d="M24 28L35 2l11 26M29.5 18h11"/>
-    </g>
+  <g transform="translate(17.7 1.6) scale(.6)">
+    <path fill="url(#sa-fav)" fill-rule="evenodd" d="M28 93C20 79 13 64 16 49C19 33 31 20 45 13L50 4C54 11 57 16 60 21C63 14 68 9 74 6C78 13 79 21 78 28C84 34 89 43 92 52C94 58 95 65 93 69C91 73 87 74 84 72C81 70 79 67 77 63C72 62 66 60 61 55C59 66 60 80 63 93Z
+    M42 25C30 36 23 52 26 68C28 78 33 84 38 87C31 78 28 66 30 54C32 42 37 32 42 25Z
+    M50 40C42 50 39 62 42 74C44 80 47 84 50 86C45 77 44 66 46 56C47 49 49 44 50 40Z"/>
+  </g>
+  <g fill="none" stroke="url(#sa-fav)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(27 68)">
+    <path d="M17 6C15 2 3 1 2 8c-1 6 15 6 15 13 0 6-12 6-15 2"/>
+    <path d="M24 28L35 2l11 26M29.5 18h11"/>
   </g>
 </svg>

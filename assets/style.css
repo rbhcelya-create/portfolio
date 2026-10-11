@@ -23,9 +23,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 
 /* HUD */
 .hud-top{position:fixed;z-index:10;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gut) 14px}
-.brand{font-family:var(--brand);font-weight:600;font-size:19px;letter-spacing:-.01em;text-decoration:none;display:inline-block;white-space:nowrap}
-.brand span{font-weight:400;color:var(--muted)}
-.brand i{font-style:normal;color:var(--magenta)}
+.brand{font-family:var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:11px;white-space:nowrap}
+.brand img{width:27px;height:34px;flex:none;filter:drop-shadow(0 0 16px rgba(214,77,150,.45))}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-txt b{font-weight:700;font-size:17px;letter-spacing:.17em}
+.brand-txt em{font-style:normal;font-weight:400;font-size:8px;letter-spacing:.39em;color:var(--muted);margin-top:4px;text-indent:.39em}
 .pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14.5px;padding:9px 16px;border-radius:999px;background:#FFFFFF;color:#05060C}
 .pill svg{width:17px;height:17px;fill:#128C4A}
 .rail{position:fixed;z-index:10;right:calc(var(--gut) - 8px);top:50%;transform:translateY(-50%);display:none;flex-direction:column;gap:4px}

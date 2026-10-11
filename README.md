@@ -12,7 +12,17 @@ automatiquement sur une version empilée classique.
 index.html          contenu et structure
 assets/style.css    styles (mode page + mode « journey »)
 assets/main.js      scène three.js, défilement, HUD
+assets/logo.png     cheval seul, fond transparent (barre du site)
+assets/favicon-*.png  icône de l'onglet et de l'écran d'accueil
+assets/og.jpg       image d'aperçu pour les partages
 ```
+
+## Marque
+
+Les fichiers sources du logo (PDF et PNG haute définition : logo principal, icône,
+version horizontale) sont hors dépôt, dans `~/Documents/build/`. Les fichiers
+d'`assets/` en sont dérivés — le cheval de la barre a été détouré depuis la version
+sur fond clair, puis rempli du dégradé de la marque.
 
 ## Développement local
 

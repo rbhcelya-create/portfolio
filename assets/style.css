@@ -107,6 +107,11 @@ p strong{color:var(--ink);font-weight:600}
 .stack li{font-family:var(--mono);font-size:12.5px;padding:7px 13px;border-radius:999px;border:1px solid var(--c,var(--line));color:var(--ink);background:rgba(10,12,28,.6);box-shadow:0 0 16px -6px var(--c,transparent)}
 .num{font-family:var(--mono);font-size:clamp(18px,2.6vw,30px);text-decoration:none;color:var(--ink);display:inline-block;margin-top:22px;font-variant-numeric:tabular-nums}
 .num:hover{color:var(--coral)}
+.coords{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:11px}
+.coords li{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.coords span{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);min-width:70px}
+.coords a{font-family:var(--mono);font-size:clamp(15px,1.9vw,22px);text-decoration:none;color:var(--ink);font-variant-numeric:tabular-nums;word-break:break-word}
+.coords a:hover{color:var(--coral)}
 .foot{margin-top:34px;font-size:13px;color:var(--muted);font-family:var(--mono);letter-spacing:.06em}
 @media (max-width:760px){
   .rows>div{grid-template-columns:minmax(0,1fr)}

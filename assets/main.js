@@ -85,29 +85,32 @@
     var r1=circle(3.7,COL.coral,120), r2=circle(4.1,COL.magenta,120); r1.rotation.x=1.2; r2.rotation.x=1.9; r2.rotation.y=.5; g.add(r1,r2);
     place(g,1,-1,function(t){ halo.rotation.y=t*.2; halo.rotation.x=t*.13; r1.rotation.z=t*.4; r2.rotation.z=-t*.3; });
   })();
-  // 2 · travel quotation: globe + orbiting route
+  // 2 · projects: one focal stage, five dedicated animations, only the active one shown
+  var projGroups=[], projActive=0, projStage=new T.Group();
+  function proj(g,spin){ projStage.add(g); projGroups.push({g:g,spin:spin}); return g; }
+  // p0 · travel quotation: globe + orbiting route
   (function(){
     var g=new T.Group(), globe=wire(new T.IcosahedronGeometry(1.7,3),COL.coral,.55); g.add(globe);
     g.add(new T.Mesh(new T.SphereGeometry(1.66,32,24),new T.MeshBasicMaterial({color:0x140618})));
     var orbit=new T.Group(), ring=circle(2.5,COL.peach,120), dot=new T.Mesh(new T.SphereGeometry(.11,12,12),glowMat(COL.peach,1)); dot.position.x=2.5; orbit.add(ring,dot); orbit.rotation.x=1.25; orbit.rotation.y=.3; g.add(orbit);
     var o2=new T.Group(), ring2=circle(2.9,COL.magenta,120), dot2=dot.clone(); dot2.material=glowMat(COL.magenta,1); dot2.position.x=2.9; o2.add(ring2,dot2); o2.rotation.x=1.9; o2.rotation.y=-.6; g.add(o2);
-    place(g,2,1,function(t){ globe.rotation.y=t*.25; orbit.rotation.z=t*.7; o2.rotation.z=-t*.5; });
+    proj(g,function(t){ globe.rotation.y=t*.25; orbit.rotation.z=t*.7; o2.rotation.z=-t*.5; });
   })();
-  // 3 · production: a stack of documents fanning
+  // p1 · production: a stack of documents fanning
   (function(){
     var g=new T.Group(), sheets=[];
     for(var i=0;i<6;i++){ var s=solidBox(2.6,.05,1.8,[COL.peach,COL.magenta,COL.violet][i%3]); s.position.y=(i-2.5)*.5; sheets.push(s); g.add(s); }
     g.rotation.x=.45;
-    place(g,3,-1,function(t){ sheets.forEach(function(s,i){ s.rotation.y=Math.sin(t*.8+i*.5)*.5; s.position.x=Math.sin(t*.6+i)*.25; }); g.rotation.y=t*.15; });
+    proj(g,function(t){ sheets.forEach(function(s,i){ s.rotation.y=Math.sin(t*.8+i*.5)*.5; s.position.x=Math.sin(t*.6+i)*.25; }); g.rotation.y=t*.15; });
   })();
-  // 4 · project platform: kanban columns in depth
+  // p2 · project platform: kanban columns in depth
   (function(){
     var g=new T.Group(), cards=[], cols=[3,4,2,3], cc=[COL.violet,COL.coral,COL.magenta,COL.peach];
     cols.forEach(function(n,ci){ for(var k=0;k<n;k++){ var b=solidBox(.95,.5,.08,cc[ci]); b.position.set((ci-1.5)*1.15, 1.2-k*.65, 0); b.userData.ph=ci*1.3+k; cards.push(b); g.add(b); } });
     g.add(segs([[-2.4,1.65,0],[2.4,1.65,0]],COL.violet));
-    place(g,4,1,function(t){ cards.forEach(function(b){ b.position.z=Math.sin(t*1.1+b.userData.ph)*.35; }); g.rotation.y=Math.sin(t*.4)*.5-.2; g.rotation.x=Math.sin(t*.3)*.12; });
+    proj(g,function(t){ cards.forEach(function(b){ b.position.z=Math.sin(t*1.1+b.userData.ph)*.35; }); g.rotation.y=Math.sin(t*.4)*.5-.2; g.rotation.x=Math.sin(t*.3)*.12; });
   })();
-  // 5 · cycling event: a bicycle drawn in light
+  // p3 · cycling event: a bicycle drawn in light
   (function(){
     var g=new T.Group(), wheels=[];
     [-1.45,1.45].forEach(function(x){ var w=new T.Group(); w.add(circle(1,COL.magenta,72), circle(.93,COL.magenta,72), circle(.1,COL.coral,16));
@@ -117,34 +120,36 @@
                 [-.55,1.15],[-.7,1.5],[-.95,1.5],[-.45,1.5],[.95,1.15],[1.05,1.6],[1.05,1.6],[1.4,1.55]],COL.coral));
     g.add(circle(.22,COL.peach,24)); g.children[g.children.length-1].position.set(.05,0,0);
     g.scale.setScalar(1.15);
-    place(g,5,-1,function(t){ wheels.forEach(function(w){ w.rotation.z=-t*2.2; }); g.rotation.y=Math.sin(t*.5)*.6; g.position.y+=Math.sin(t*1.4)*.002; });
+    proj(g,function(t){ wheels.forEach(function(w){ w.rotation.z=-t*2.2; }); g.rotation.y=Math.sin(t*.5)*.6; });
   })();
-  // 6 · AVS mobile app: a phone with two people connecting
+  // p4 · AVS mobile app: a phone with two people connecting
   (function(){
     var g=new T.Group(); g.add(solidBox(1.7,3.3,.14,COL.coral));
     var a=circle(.32,COL.peach,32), b=circle(.32,COL.magenta,32); a.position.set(0,.85,.12); b.position.set(0,-.85,.12); g.add(a,b);
     var link=segs([[0,.5,.12],[0,-.5,.12]],0xffffff); g.add(link);
     var pulse=circle(.2,0xffffff,32); pulse.position.z=.12; g.add(pulse);
     g.add(segs([[-.25,1.45,.08],[.25,1.45,.08]],COL.coral));
-    place(g,6,1,function(t){ g.rotation.y=Math.sin(t*.6)*.7; g.rotation.x=Math.sin(t*.4)*.15; var k=(t*.6)%1; pulse.scale.setScalar(1+k*5); pulse.material.opacity=1-k; });
+    g.scale.setScalar(.82);
+    proj(g,function(t){ g.rotation.y=Math.sin(t*.6)*.7; g.rotation.x=Math.sin(t*.4)*.15; var k=(t*.6)%1; pulse.scale.setScalar(1+k*5); pulse.material.opacity=1-k; });
   })();
-  // 7 · services: three interlocked rings
+  place(projStage,2,0,function(t){ projGroups.forEach(function(pg,i){ pg.g.visible=i===projActive; }); projGroups[projActive].spin(t); });
+  // 3 · services: three interlocked rings
   (function(){
     var g=new T.Group(), rs=[COL.coral,COL.magenta,COL.peach].map(function(c,i){ var m=new T.Group(); m.add(new T.Mesh(new T.TorusGeometry(2.3,.03,8,120),glowMat(c,1)), new T.Mesh(new T.TorusGeometry(2.3,.16,8,120),glowMat(c,.14))); m.rotation.x=i*1.05; m.rotation.y=i*.7; g.add(m); return m; });
-    place(g,7,0,function(t){ rs.forEach(function(m,i){ m.rotation.z=t*(.3+i*.12); m.rotation.x+=.002*(i+1); }); });
+    place(g,3,0,function(t){ rs.forEach(function(m,i){ m.rotation.z=t*(.3+i*.12); m.rotation.x+=.002*(i+1); }); });
   })();
-  // 8 · method: five beacons in a row, lighting in sequence
+  // 4 · method: five beacons in a row, lighting in sequence
   (function(){
     var g=new T.Group(), bs=[COL.coral,COL.violet,COL.magenta,COL.peach,COL.coral].map(function(c,i){ var o=new T.Group(), geo=new T.OctahedronGeometry(.55,0); var fill=new T.Mesh(geo,glowMat(c,.2)); o.add(fill,edges(geo,c)); o.position.x=(i-2)*2.1; o.userData.fill=fill; g.add(o); return o; });
     g.add(segs([[-4.2,0,0],[4.2,0,0]],COL.violet)); g.position.y=2.6;
-    place(g,8,0,function(t){ bs.forEach(function(o,i){ o.rotation.y=t*.8+i; var k=Math.max(0,Math.sin(t*1.2-i*.9)); o.userData.fill.material.opacity=.12+k*.7; o.scale.setScalar(1+k*.25); }); });
+    place(g,4,0,function(t){ bs.forEach(function(o,i){ o.rotation.y=t*.8+i; var k=Math.max(0,Math.sin(t*1.2-i*.9)); o.userData.fill.material.opacity=.12+k*.7; o.scale.setScalar(1+k*.25); }); });
   })();
-  // 9 · contact: a portal
+  // 5 · contact: a portal
   (function(){
     var g=new T.Group(), k=wire(new T.TorusKnotGeometry(2.6,.55,160,12,2,3),COL.magenta,.5); g.add(k);
     var rings=[]; for(var i=0;i<5;i++){ var r=circle(3.8+i*.9,[COL.coral,COL.violet,COL.magenta][i%3],140); r.material.opacity=.7-i*.1; rings.push(r); g.add(r); }
     g.position.z=-6;
-    place(g,9,0,function(t){ k.rotation.y=t*.2; k.rotation.x=t*.12; rings.forEach(function(r,i){ r.rotation.z=t*.1*(i%2?1:-1); r.scale.setScalar(1+Math.sin(t*.8+i)*.04); }); });
+    place(g,5,0,function(t){ k.rotation.y=t*.2; k.rotation.x=t*.12; rings.forEach(function(r,i){ r.rotation.z=t*.1*(i%2?1:-1); r.scale.setScalar(1+Math.sin(t*.8+i)*.04); }); });
   })();
 
   // ---------- layout ----------
@@ -152,8 +157,13 @@
     var w=innerWidth, h=innerHeight; renderer.setSize(w,h,false); cam.aspect=w/h; cam.fov = cam.aspect<.8 ? 66 : 50; cam.updateProjectionMatrix();
     var portrait = cam.aspect<1, halfW = Math.tan(cam.fov*Math.PI/360)*9*cam.aspect, halfH = Math.tan(cam.fov*Math.PI/360)*9;
     objs.forEach(function(o){
-      var z = -o.i*STEP - 9 + (o.i===9?-6:0);
-      if(o.side===0){ o.g.position.set(0, o.i===8 ? (portrait?halfH*1.12:2.7) : 0, z-(portrait?4:2)); o.g.scale.setScalar(portrait?.55:1); o.baseY=o.g.position.y; return; }
+      var z = -o.i*STEP - 9 + (o.i===5?-6:0);
+      if(o.i===2){ // projects: animation plays to the right of the card list (landscape) or centered behind (portrait)
+        if(portrait){ o.g.position.set(0, halfH*.02, z-4); o.g.scale.setScalar(.6); }
+        else { o.g.position.set(halfW*.52, 0, z-2); o.g.scale.setScalar(Math.min(1.5, halfW/5.2)); }
+        o.baseY=o.g.position.y; return;
+      }
+      if(o.side===0){ o.g.position.set(0, o.i===4 ? (portrait?halfH*1.12:2.7) : 0, z-(portrait?4:2)); o.g.scale.setScalar(portrait?.55:1); o.baseY=o.g.position.y; return; }
       if(portrait){ o.g.position.set(0, halfH*.5, z); o.g.scale.setScalar(.62); }
       else { o.g.position.set(o.side*halfW*.56, 0, z); o.g.scale.setScalar(Math.min(1, halfW/6.2)*(o.i===1?.62:.85)); }
       o.baseY=o.g.position.y;
@@ -179,6 +189,17 @@
     addEventListener('pointermove',function(e){ mx=e.clientX/innerWidth-.5; my=e.clientY/innerHeight-.5; cur.style.opacity=1; cur.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'; },{passive:true});
     document.querySelectorAll('[data-hot],.pill,.brand').forEach(function(el){ el.addEventListener('pointerenter',function(){cur.classList.add('hot');}); el.addEventListener('pointerleave',function(){cur.classList.remove('hot');}); });
   }
+
+  // projects: pick which dedicated animation plays on the focal stage
+  (function(){
+    var pcards=[].slice.call(document.querySelectorAll('.pcard'));
+    function pick(n){ if(n===projActive) return; projActive=n; pcards.forEach(function(el,i){ el.classList.toggle('on', i===n); }); }
+    pcards.forEach(function(el,i){
+      el.addEventListener('pointerenter',function(){ if(fine) pick(i); });
+      el.addEventListener('focus',function(){ pick(i); });
+      el.addEventListener('click',function(){ pick(i); });
+    });
+  })();
   function smooth(a,b,x){ x=Math.max(0,Math.min(1,(x-a)/(b-a))); return x*x*(3-2*x); }
 
   function chapters(){

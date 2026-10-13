@@ -3,8 +3,9 @@
 Page unique pour Spirit Agency, le studio de Celya Rabhi, consultante développeuse à Montréal.
 
 Page statique, sans build. Le parcours est une scène WebGL (three.js r128, via CDN) qui se
-déroule au défilement ; sans WebGL ou avec `prefers-reduced-motion`, la page se replie
-automatiquement sur une version empilée classique.
+déroule au défilement ; sur mobile/tactile, sans WebGL ou avec `prefers-reduced-motion`, la
+page se replie automatiquement sur une version empilée classique à défilement natif (plus
+fluide au doigt, sans à-coups).
 
 ## Structure
 

@@ -2,11 +2,8 @@
   var T = window.THREE, cv = document.getElementById('space');
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var touch = matchMedia('(hover: none)').matches || matchMedia('(pointer: coarse)').matches;
   var root = document.documentElement;
-  // Touch / small screens: skip the scroll-driven journey and use the plain
-  // stacked page — native scrolling stays perfectly fluid, no blank gaps.
-  if(!T || calm || touch || innerWidth < 760){ cv.hidden = true; return; }
+  if(!T || calm){ cv.hidden = true; return; }
   var renderer;
   try{ renderer = new T.WebGLRenderer({canvas:cv, antialias:true, alpha:false}); }catch(e){ cv.hidden = true; return; }
 

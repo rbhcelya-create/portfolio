@@ -3,13 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Spirit Agency, studio de développement — France, Algérie, Canada. Outils web sur mesure, applications et prototypes, développement assisté par IA.">
+<meta name="description" content="Spirit Agency, studio de développement — France, Canada, International. Outils web sur mesure, applications et prototypes, développement assisté par IA.">
 <meta name="theme-color" content="#05060C">
 <meta property="og:title" content="Spirit Agency — outils web sur mesure">
 <meta property="og:description" content="Votre outil. Sur mesure. En semaines.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="./">
+<link rel="alternate" hreflang="en" href="en/">
+<link rel="alternate" hreflang="x-default" href="./">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +28,32 @@
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 
 <header class="hud-top">
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
   <a class="brand" href="#haut"><img src="assets/logo.png" alt="" width="27" height="34"><span class="brand-txt"><b>SPIRIT</b><em>AGENCY</em></span></a>
-  <a class="pill" href="https://wa.me/14383550116?text=Bonjour%2C%20j%27aimerais%20discuter%20d%27un%20projet." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+  <nav class="topnav" aria-label="Sections">
+    <a data-hot href="#haut" data-go="0">Accueil</a>
+    <a data-hot href="#apropos" data-go="1">À propos</a>
+    <a data-hot href="#projets" data-go="2">Projets</a>
+    <a data-hot href="#services" data-go="3">Services</a>
+    <a data-hot href="#methode" data-go="4">Méthode</a>
+    <a data-hot href="#contact" data-go="5">Contact</a>
+  </nav>
+  <div class="hud-r">
+    <a class="lang" href="en/" hreflang="en">EN</a>
+    <a class="pill" href="https://wa.me/14383550116?text=Bonjour%2C%20j%27aimerais%20discuter%20d%27un%20projet." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+  </div>
 </header>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
+  <nav class="drawer-nav">
+    <a data-hot href="#haut" data-go="0">Accueil</a>
+    <a data-hot href="#apropos" data-go="1">À propos</a>
+    <a data-hot href="#projets" data-go="2">Projets</a>
+    <a data-hot href="#services" data-go="3">Services</a>
+    <a data-hot href="#methode" data-go="4">Méthode</a>
+    <a data-hot href="#contact" data-go="5">Contact</a>
+  </nav>
+</aside>
+<div class="drawer-scrim" id="drawerScrim" aria-hidden="true"></div>
 <nav class="rail" id="rail" aria-label="Chapitres"></nav>
 <div class="readout" id="readout" aria-hidden="true"></div>
 <div class="hint" id="hint" aria-hidden="true">Défilez</div>
@@ -36,7 +62,7 @@
 
   <section class="ch hero c" data-name="Départ">
     <div class="in"><div class="box">
-      <p class="k">Studio de développement · France · Algérie · Canada</p>
+      <p class="k">Studio de développement · France · Canada · International</p>
       <h1><span>Votre outil.</span><span class="grad">Sur mesure.</span><span>En semaines.</span></h1>
       <p class="lede">Nous concevons et construisons <strong>l'outil web qui colle à votre façon de travailler</strong>. Développement assisté par IA : un prototype entre vos mains en quelques jours.</p>
       <div class="cta">
@@ -45,7 +71,7 @@
     </div></div>
   </section>
 
-  <section class="ch r" data-name="À propos">
+  <section class="ch r" id="apropos" data-name="À propos">
     <div class="in"><div class="box">
       <p class="k">À propos</p>
       <h2>L'équipe qui vous <span class="grad">écoute</span> est celle qui <span class="grad">code.</span></h2>
@@ -56,7 +82,7 @@
     </div></div>
   </section>
 
-  <section class="ch proj c" data-name="Projets" style="--tint:var(--coral)">
+  <section class="ch proj c" id="projets" data-name="Projets" style="--tint:var(--coral)">
     <div class="in"><div class="box">
       <p class="k">Projets</p>
       <h2>Des outils <span class="grad">livrés</span>, pas des maquettes</h2>
@@ -95,7 +121,7 @@
     </div></div>
   </section>
 
-  <section class="ch c" data-name="Services">
+  <section class="ch c" id="services" data-name="Services">
     <div class="in"><div class="box">
       <p class="k">Services</p>
       <h2>Ce que nous <span class="grad">construisons</span></h2>
@@ -107,7 +133,7 @@
     </div></div>
   </section>
 
-  <section class="ch c" data-name="Méthode">
+  <section class="ch c" id="methode" data-name="Méthode">
     <div class="in"><div class="box">
       <p class="k">Méthode</p>
       <h2>De l'irritant à l'outil, en <span class="grad">cinq temps</span></h2>
@@ -121,7 +147,7 @@
     </div></div>
   </section>
 
-  <section class="ch c" data-name="Contact">
+  <section class="ch c" id="contact" data-name="Contact">
     <div class="in"><div class="box">
       <p class="k">Contact</p>
       <h2>Un projet en tête? <span class="grad">Parlons-en.</span></h2>
@@ -132,7 +158,7 @@
         <li><span>France</span><a data-hot href="tel:+33695412197">+33 6 95 41 21 97</a></li>
         <li><span>Courriel</span><a data-hot href="mailto:contact.spiritagency@gmail.com">contact.spiritagency@gmail.com</a></li>
       </ul>
-      <p class="foot">© 2026 Spirit Agency · France · Algérie · Canada</p>
+      <p class="foot">© 2026 Spirit Agency · France · Canada · International</p>
     </div></div>
   </section>
 </main>

@@ -3,6 +3,23 @@
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   var root = document.documentElement;
+
+  // ---------- mobile drawer (runs even without WebGL) ----------
+  (function(){
+    var burger = document.getElementById('burger'), drawer = document.getElementById('drawer'), scrim = document.getElementById('drawerScrim');
+    if(!burger || !drawer) return;
+    function set(open){
+      root.classList.toggle('drawer-open', open);
+      burger.setAttribute('aria-expanded', open?'true':'false');
+      drawer.setAttribute('aria-hidden', open?'false':'true');
+      if(scrim) scrim.setAttribute('aria-hidden', open?'false':'true');
+    }
+    burger.addEventListener('click', function(){ set(!root.classList.contains('drawer-open')); });
+    if(scrim) scrim.addEventListener('click', function(){ set(false); });
+    [].slice.call(drawer.querySelectorAll('a')).forEach(function(a){ a.addEventListener('click', function(){ set(false); }); });
+    addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  })();
+
   if(!T || calm){ cv.hidden = true; return; }
   var renderer;
   try{ renderer = new T.WebGLRenderer({canvas:cv, antialias:true, alpha:false}); }catch(e){ cv.hidden = true; return; }
@@ -177,6 +194,8 @@
     var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',c.dataset.name); b.dataset.hot='';
     b.addEventListener('click',function(){ scrollTo({top:i*stopH(),behavior:'smooth'}); }); rail.appendChild(b);
   });
+  var topLinks=[].slice.call(document.querySelectorAll('a[data-go]'));
+  topLinks.forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); scrollTo({top:(+a.dataset.go)*stopH(),behavior:'smooth'}); }); });
   root.classList.add('journey');
   function stopH(){ return track.firstChild.offsetHeight || innerHeight; }
   document.querySelector('.brand').addEventListener('click',function(e){ e.preventDefault(); scrollTo({top:0,behavior:'smooth'}); });
@@ -214,6 +233,7 @@
     });
     var idx=Math.round(p);
     if(idx!==lastIdx){ lastIdx=idx; [].forEach.call(rail.children,function(b,i){ b.setAttribute('aria-current', i===idx?'true':'false'); });
+      topLinks.forEach(function(a){ a.setAttribute('aria-current', (+a.dataset.go)===idx?'true':'false'); });
       readout.innerHTML='<b>'+('0'+(idx+1)).slice(-2)+'</b> / '+('0'+N).slice(-2)+' · '+chs[idx].dataset.name; }
     hint.style.opacity = p<.15 ? 1 : 0;
   }

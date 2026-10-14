@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Spirit Agency, development studio — France, Canada, Worldwide. Custom web tools, apps and prototypes, AI-assisted development.">
+<meta name="theme-color" content="#05060C">
+<meta property="og:title" content="Spirit Agency — custom web tools">
+<meta property="og:description" content="Your tool. Tailor-made. In weeks.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="../">
+<link rel="alternate" hreflang="en" href="./">
+<link rel="alternate" hreflang="x-default" href="../">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Spirit Agency — custom web tools</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Outfit:wght@400;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<canvas id="space" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="hud-top">
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  <a class="brand" href="#haut"><img src="../assets/logo.png" alt="" width="27" height="34"><span class="brand-txt"><b>SPIRIT</b><em>AGENCY</em></span></a>
+  <nav class="topnav" aria-label="Sections">
+    <a data-hot href="#haut" data-go="0">Home</a>
+    <a data-hot href="#about" data-go="1">About</a>
+    <a data-hot href="#projects" data-go="2">Projects</a>
+    <a data-hot href="#services" data-go="3">Services</a>
+    <a data-hot href="#method" data-go="4">Method</a>
+    <a data-hot href="#contact" data-go="5">Contact</a>
+  </nav>
+  <div class="hud-r">
+    <a class="lang" href="../" hreflang="fr">FR</a>
+    <a class="pill" href="https://wa.me/14383550116?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
+  <nav class="drawer-nav">
+    <a data-hot href="#haut" data-go="0">Home</a>
+    <a data-hot href="#about" data-go="1">About</a>
+    <a data-hot href="#projects" data-go="2">Projects</a>
+    <a data-hot href="#services" data-go="3">Services</a>
+    <a data-hot href="#method" data-go="4">Method</a>
+    <a data-hot href="#contact" data-go="5">Contact</a>
+  </nav>
+</aside>
+<div class="drawer-scrim" id="drawerScrim" aria-hidden="true"></div>
+<nav class="rail" id="rail" aria-label="Chapters"></nav>
+<div class="readout" id="readout" aria-hidden="true"></div>
+<div class="hint" id="hint" aria-hidden="true">Scroll</div>
+
+<main class="chapters" id="haut">
+
+  <section class="ch hero c" data-name="Start">
+    <div class="in"><div class="box">
+      <p class="k">Development studio · France · Canada · Worldwide</p>
+      <h1><span>Your tool.</span><span class="grad">Tailor-made.</span><span>In weeks.</span></h1>
+      <p class="lede">We design and build <strong>the web tool that fits the way you work</strong>. AI-assisted development: a prototype in your hands within days.</p>
+      <div class="cta">
+        <a class="btn" data-hot href="https://wa.me/14383550116?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="ch r" id="about" data-name="About">
+    <div class="in"><div class="box">
+      <p class="k">About</p>
+      <h2>The team that <span class="grad">listens</span> is the team that <span class="grad">codes.</span></h2>
+      <p>At Spirit Agency, we take a project from end to end: we meet the client, frame the need, design the interface, build and ship. Nothing gets lost along the way.</p>
+      <ul class="stack">
+        <li style="--c:var(--coral)">HTML · CSS · JavaScript</li><li style="--c:var(--violet)">Supabase · Auth · RLS</li><li style="--c:var(--magenta)">GitHub · Netlify</li><li style="--c:var(--peach)">React Native · Expo</li><li style="--c:var(--coral)">Claude Code</li><li style="--c:var(--violet)">Interface design</li><li style="--c:var(--magenta)">User testing</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="ch proj c" id="projects" data-name="Projects" style="--tint:var(--coral)">
+    <div class="in"><div class="box">
+      <p class="k">Projects</p>
+      <h2>Delivered <span class="grad">tools</span>, not mockups</h2>
+      <ul class="pgrid">
+        <li class="pcard on" style="--tint:var(--coral)" tabindex="0" data-p="0">
+          <p class="pc-k">01 · International travel agency</p>
+          <h3>Group travel quoting</h3>
+          <p>A quoting studio that replaces hand-built proposals: centralized supplier rates, quotes for all three brands.</p>
+          <ul class="tags"><li>HTML/JS</li><li>Data</li><li>Claude Code</li></ul>
+        </li>
+        <li class="pcard" style="--tint:var(--peach)" tabindex="0" data-p="1">
+          <p class="pc-k">02 · Children's educational content</p>
+          <h3>Production management</h3>
+          <p>Production tracking for children's content, delivered and deployed — a sidebar interface in the style of Notion and Linear.</p>
+          <ul class="tags"><li>Supabase</li><li>Netlify</li><li>Design</li></ul>
+        </li>
+        <li class="pcard" style="--tint:var(--violet)" tabindex="0" data-p="2">
+          <p class="pc-k">03 · CRM &amp; internal management</p>
+          <h3>Internal management platform</h3>
+          <p>A CRM and internal management tool: projects, tasks, milestones, calendar and team coordination in shared workspaces. Kanban + Gantt.</p>
+          <ul class="tags"><li>CRM</li><li>Supabase Auth · RLS</li><li>Kanban · Gantt</li></ul>
+        </li>
+        <li class="pcard" style="--tint:var(--magenta)" tabindex="0" data-p="3">
+          <p class="pc-k">04 · International sporting event</p>
+          <h3>App for a major cycling event</h3>
+          <p>Evolving an existing web app: new features, spec trade-offs, ongoing client support.</p>
+          <ul class="tags"><li>Web app</li><li>GitHub</li><li>Client support</li></ul>
+        </li>
+        <li class="pcard" style="--tint:var(--coral)" tabindex="0" data-p="4">
+          <p class="pc-k">05 · Home care · mobile</p>
+          <h3>Caregiver ↔ families mobile app</h3>
+          <p>A two-sided marketplace: families find a care worker, caregivers find families. Store-ready.</p>
+          <ul class="tags"><li>React Native</li><li>Expo</li><li>iOS · Android</li></ul>
+        </li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="ch c" id="services" data-name="Services">
+    <div class="in"><div class="box">
+      <p class="k">Services</p>
+      <h2>What we <span class="grad">build</span></h2>
+      <div class="rows">
+        <div><h3>CRM and internal management tools</h3><p>Project, production and document tracking, quoting, client relations: an internal tool built around your processes, not the other way around — right up to our own management platform.</p></div>
+        <div><h3>Apps and websites</h3><p>Fast, polished, easy to evolve, simply deployed and hosted.</p></div>
+        <div><h3>Prototypes to decide</h3><p>A working prototype with your real data, to validate the idea before investing further.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="ch c" id="method" data-name="Method">
+    <div class="in"><div class="box">
+      <p class="k">Method</p>
+      <h2>From pain point to tool, in <span class="grad">five steps</span></h2>
+      <ol class="steps">
+        <li style="--c:var(--coral)"><h3>Listen</h3><p>Your pain points, your processes, your real needs.</p></li>
+        <li style="--c:var(--violet)"><h3>Prototype</h3><p>In a few days, working, with your data.</p></li>
+        <li style="--c:var(--magenta)"><h3>Build</h3><p>The full tool, with regular checkpoints.</p></li>
+        <li style="--c:var(--peach)"><h3>Delivery</h3><p>Launch, training, adjustments.</p></li>
+        <li style="--c:var(--coral)"><h3>Support</h3><p>Clear documentation and ongoing support.</p></li>
+      </ol>
+    </div></div>
+  </section>
+
+  <section class="ch c" id="contact" data-name="Contact">
+    <div class="in"><div class="box">
+      <p class="k">Contact</p>
+      <h2>Got a project in mind? <span class="grad">Let's talk.</span></h2>
+      <p class="lede">The easiest way is to message us on WhatsApp. Tell us what's slowing you down; we'll tell you what we can build.</p>
+      <div class="cta"><a class="btn" data-hot href="https://wa.me/14383550116?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Start the conversation</a></div>
+      <ul class="coords">
+        <li><span>Canada</span><a data-hot href="https://wa.me/14383550116" target="_blank" rel="noopener">+1 438 355 0116</a></li>
+        <li><span>France</span><a data-hot href="tel:+33695412197">+33 6 95 41 21 97</a></li>
+        <li><span>Email</span><a data-hot href="mailto:contact.spiritagency@gmail.com">contact.spiritagency@gmail.com</a></li>
+      </ul>
+      <p class="foot">© 2026 Spirit Agency · France · Canada · Worldwide</p>
+    </div></div>
+  </section>
+</main>
+
+<div class="track" id="track" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="wa"><path d="M12.04 2a9.9 9.9 0 0 0-8.43 15.1L2 22l5.05-1.57A9.93 9.93 0 1 0 12.04 2Zm0 1.8a8.12 8.12 0 1 1-4.3 15l-.31-.19-2.9.9.93-2.82-.2-.32A8.12 8.12 0 0 1 12.04 3.8Z"/><path transform="translate(-.92,-1.13)" d="M8.84 7.7c-.2 0-.5.07-.77.36-.26.3-1 1-1 2.4 0 1.42 1.03 2.79 1.18 2.98.14.2 2 3.2 4.95 4.36 2.45.97 2.95.78 3.48.73.53-.05 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34-.3-.14-1.72-.85-1.99-.95-.26-.1-.46-.14-.65.15-.2.3-.75.95-.92 1.14-.17.2-.34.22-.63.08-.3-.15-1.23-.46-2.34-1.45a8.8 8.8 0 0 1-1.62-2.02c-.17-.3-.02-.45.13-.6.13-.13.3-.34.43-.5.15-.18.2-.3.3-.5.1-.19.05-.36-.03-.5-.07-.15-.64-1.58-.9-2.16-.22-.52-.46-.53-.66-.54l-.56-.01Z"/></g></defs></svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../assets/main.js"></script>
+</body>
+</html>

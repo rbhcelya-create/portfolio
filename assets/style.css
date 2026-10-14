@@ -137,6 +137,7 @@ p strong{color:var(--ink);font-weight:600}
 .coords span{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);min-width:70px}
 .coords a{font-family:var(--mono);font-size:clamp(15px,1.9vw,22px);text-decoration:none;color:var(--ink);font-variant-numeric:tabular-nums;word-break:break-word}
 .coords a:hover{color:var(--coral)}
+.coords a .ig-ico{width:1em;height:1em;fill:currentColor;vertical-align:-.14em;margin-right:8px}
 .foot{margin-top:34px;font-size:13px;color:var(--muted);font-family:var(--mono);letter-spacing:.06em}
 @media (max-width:760px){
   .rows>div{grid-template-columns:minmax(0,1fr)}
